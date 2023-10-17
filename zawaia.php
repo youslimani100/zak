@@ -9,6 +9,40 @@
 </head>
 
 <body>
+    <div class="barre_connexion" id="content">
+ 
+        <a href='zawaia.php?deconnexion=true'><span>Déconnexion</span></a>
+        
+        <!-- tester si l'utilisateur est connecté -->
+        <?php
+        session_start();
+        if(isset($_GET['deconnexion']))
+        { 
+        if($_GET['deconnexion']==true)
+        { 
+        session_unset();
+        header("location:login.php");
+        }
+        }
+        /* else if($_SESSION['username'] !== ""){
+        $user = $_SESSION['username'];
+        // afficher un message
+        echo "<br>Bonjour $user, vous êtes connectés";
+        } */
+       
+       
+        if(isset($_SESSION['username'])) 
+        { 
+            $user = $_SESSION['username'];
+            echo "<br>Bonjour--- $user ----, vous êtes Connecter Ok";}
+        else { 
+           header("location:login.php");
+       }
+       
+        ?>
+        
+        </div>
+        
     <div class="crud">
         <div class="head">
             <h2>تسيير الزوايا لولاية</h2>

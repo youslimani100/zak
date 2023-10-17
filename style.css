@@ -7,6 +7,12 @@ body{
     color: #000;
     /* font-family: 'Times New Roman', Times, serif; */
 }
+.barre_connexion{
+    background: #60cc79;
+    color: #000;
+    margin: 10px 0;
+}
+
 .crud{
     width: 80%;
     margin: auto;
