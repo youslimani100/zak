@@ -2,3 +2,4 @@
 # dossier/
 # Ignorees les fiche de git avec le fichier .gitignor . 
 # structure.txt
+*.xlsx

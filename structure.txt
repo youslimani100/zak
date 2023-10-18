@@ -1,39 +1,31 @@
-zawia:
-nomzawia
-wilaya
-daira
-commune
-adressezawia
-telzawia
-
-
-الرمز الولائي
-الولاية
-اسم الزاوية
-الطريقة الصوفية
-عاملة أو غير عاملة
-نوع النشاط
-اسم مؤسس الزاوية
-سنة التأسيس  م
-سنة التأسيس  هـ
-عنوان الزاوية
-البلدية (مقر الزاوية)
-اسم شيخ الزاوية الحالي
-تاريخ ميلاد شيخ الزاوية الحالي
-وظيفة  شيخ الزاوية
-عدد مؤطري الزاوية الموظفين
-عدد مؤطري الزاوية الغير موظفين
-عدد الطلبة  الداخليين
-عدد الطلبة  الخارجيين
-عدد الطلبة الخارجيين ذكور
-عدد الطلبة الخارجيين إناث
-عدد الطلبة الأجانب
-بلاد الطلبة الأجانب
-الهاتف الثابت
-الهاتف النقال
-البريد الإلكتروني
-الربط بشبكة الانترنيت
-منصات الزاوية على الأنترنيت
-موقع الزاوية  على خريطة maps
-صورة شخصية لشيخ الزاوية
-صورة أمامية للزاوية
+		
+الرمز الولائي		nom_zaouia
+الولاية		tariqua_sofia
+اسم الزاوية		fondateur_zaouia
+الطريقة الصوفية		Annee_etablissement_m
+عاملة أو غير عاملة		Annee_etablissement_h
+نوع النشاط		Travaillant
+اسم مؤسس الزاوية		type_activite
+سنة التأسيس  م		code_wilaya
+سنة التأسيس  هـ		wilaya
+عنوان الزاوية		commune
+البلدية (مقر الزاوية)		Adresse_zaouia
+اسم شيخ الزاوية الحالي		photo_cheikh_zaouia
+تاريخ ميلاد شيخ الزاوية الحالي		tel_fixe
+وظيفة  شيخ الزاوية		tel_portable
+عدد مؤطري الزاوية الموظفين		Email
+عدد مؤطري الزاوية الغير موظفين		coordonees_maps
+عدد الطلبة  الداخليين		nom_actuel_cheikh_zaouia
+عدد الطلبة  الخارجيين		photo_cheikh_zaouia
+عدد الطلبة الخارجيين ذكور		Date_naiss_cheikh_zaouia
+عدد الطلبة الخارجيين إناث		fonction_cheikh_zaouia
+عدد الطلبة الأجانب		nbr_encadreurs_zaouia_employes
+بلاد الطلبة الأجانب		nbr_encadreurs_zaouia_non_employes
+الهاتف الثابت		Nbr_etudiants_internes
+الهاتف النقال		Nbr_etudiants_externes
+البريد الإلكتروني		Nbr_etudiants_externes_masculin
+الربط بشبكة الانترنيت		Nbr_etudiants_externes_feminin
+منصات الزاوية على الأنترنيت		Nbr_etudiants_externes_etrangers
+موقع الزاوية  على خريطة maps		Pays_etudiants_etrangers
+صورة شخصية لشيخ الزاوية		Connexion_Internet
+صورة أمامية للزاوية		Plateformes_enligne_zaouia
