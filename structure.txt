@@ -1,31 +1,32 @@
-		
+		id_zaouia
 الرمز الولائي		nom_zaouia
 الولاية		tariqua_sofia
 اسم الزاوية		fondateur_zaouia
-الطريقة الصوفية		Annee_etablissement_m
-عاملة أو غير عاملة		Annee_etablissement_h
-نوع النشاط		Travaillant
+الطريقة الصوفية		annee_etablissement_mil
+عاملة أو غير عاملة		annee_etablissement_hidj
+نوع النشاط		travaillant
 اسم مؤسس الزاوية		type_activite
 سنة التأسيس  م		code_wilaya
 سنة التأسيس  هـ		wilaya
 عنوان الزاوية		commune
-البلدية (مقر الزاوية)		Adresse_zaouia
+البلدية (مقر الزاوية)		Adresse
 اسم شيخ الزاوية الحالي		photo_cheikh_zaouia
 تاريخ ميلاد شيخ الزاوية الحالي		tel_fixe
+فاكس			fax
 وظيفة  شيخ الزاوية		tel_portable
-عدد مؤطري الزاوية الموظفين		Email
-عدد مؤطري الزاوية الغير موظفين		coordonees_maps
+عدد مؤطري الزاوية الموظفين		email
+عدد مؤطري الزاوية الغير موظفين		coordonees_maps     36.64000906833332, 3.356221054398021
 عدد الطلبة  الداخليين		nom_actuel_cheikh_zaouia
 عدد الطلبة  الخارجيين		photo_cheikh_zaouia
 عدد الطلبة الخارجيين ذكور		Date_naiss_cheikh_zaouia
 عدد الطلبة الخارجيين إناث		fonction_cheikh_zaouia
-عدد الطلبة الأجانب		nbr_encadreurs_zaouia_employes
-بلاد الطلبة الأجانب		nbr_encadreurs_zaouia_non_employes
-الهاتف الثابت		Nbr_etudiants_internes
-الهاتف النقال		Nbr_etudiants_externes
-البريد الإلكتروني		Nbr_etudiants_externes_masculin
-الربط بشبكة الانترنيت		Nbr_etudiants_externes_feminin
-منصات الزاوية على الأنترنيت		Nbr_etudiants_externes_etrangers
-موقع الزاوية  على خريطة maps		Pays_etudiants_etrangers
-صورة شخصية لشيخ الزاوية		Connexion_Internet
-صورة أمامية للزاوية		Plateformes_enligne_zaouia
+عدد الطلبة الأجانب		nbr_encadreurs_employes
+بلاد الطلبة الأجانب		nbr_encadreurs_non_employes
+الهاتف الثابت		nbr_etudiants_internes
+الهاتف النقال		nbr_etudiants_externes
+البريد الإلكتروني		nbr_etudiants_externes_masculin
+الربط بشبكة الانترنيت		nbr_etudiants_externes_feminin
+منصات الزاوية على الأنترنيت		nbr_etudiants_externes_etrangers
+موقع الزاوية  على خريطة maps		pays_etudiants_etrangers
+صورة شخصية لشيخ الزاوية		connex_Internet
+صورة أمامية للزاوية		Plateformes_enligne

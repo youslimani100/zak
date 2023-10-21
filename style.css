@@ -23,13 +23,24 @@ body{
 
 }
 /* input css .................................... */
-
+.zaouia_inf{
+    /* display: inline;*/
+    background: #adeaaa; 
+}
+.chikh_zaouia_inf{
+    background: #d89b9b;
+}
+.zaouia_statiistique{
+    background: #d2f38c;
+}
 input{
-    width: 100%;
+    /* float: right;
+    width: auto; */
+    width: 80%;
     height: 30px;
     outline: none;
     border: none;
-    background: #dae0e6;
+    background: #fff;
     margin: 5px 2px;
     direction: rtl;
     border-radius: 6px;

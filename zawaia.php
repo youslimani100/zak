@@ -34,7 +34,7 @@
         if(isset($_SESSION['username'])) 
         { 
             $user = $_SESSION['username'];
-            echo "<br>Bonjour--- $user ----, vous êtes Connecter Ok";}
+            echo "<br>المديرية الولائية : $user";}
         else { 
            header("location:login.php");
        }
@@ -50,9 +50,47 @@
 
         </div>
         <div class="inputs">
-            <input type="text" id="nomzawia" placeholder="اسم الزاوية">
-            <input type="text" id="adressezawia" placeholder="عنوان الزاوية">
-            <input type="tel" id="telezawia" placeholder="رقم الهاتف">
+            <div class="zaouia_inf">
+           <input type="text" id="nomzawia" placeholder="اسم الزاوية">
+            <input type="text" id="nomzawia" placeholder="الطريقة الصوفية">
+            <input type="text" id="nomzawia" placeholder="عاملة">
+            <input type="text" id="nomzawia" placeholder="نوع النشاط">
+            <input type="text" id="nomzawia" placeholder="اسم مؤسس الزاوية">
+            <input type="text" id="nomzawia" placeholder="سنة التأسيس هجري">
+            <input type="text" id="nomzawia" placeholder="سنة التأسيس ميلادي">
+            <input type="text" id="nomzawia" placeholder="البلدية (مقر الزاوية)">
+            <input type="text" id="nomzawia" placeholder="عنوان الزاوية">
+            <input type="text" id="nomzawia" placeholder="الهاتف الثابت">
+            <input type="text" id="nomzawia" placeholder="الفاكس">
+            <input type="text" id="nomzawia" placeholder="الهاتف النقال">
+            <input type="text" id="nomzawia" placeholder="لبريد الإلكتروني">
+            <input type="text" id="nomzawia" placeholder="موقع الزاوية  على خريطة maps">
+            <input type="text" id="nomzawia" placeholder="صورة أمامية للزاوية">
+            <input type="text" id="nomzawia" placeholder="الربط بشبكة الانترنيت">
+            <input type="text" id="nomzawia" placeholder="منصات الزاوية على الأنترنيت">
+            <!-- <input type="text" id="adressezawia" placeholder="عنوان الزاوية">
+            <input type="tel" id="telezawia" placeholder="رقم الهاتف"> -->
+            </div>
+            
+            <div class="chikh_zaouia_inf">
+            <input type="text" id="nomzawia" placeholder="اسم شيخ الزاوية الحالي">
+            <input type="text" id="nomzawia" placeholder="تاريخ ميلاد شيخ الزاوية الحالي">
+            <input type="text" id="nomzawia" placeholder="صورة شخصية لشيخ الزاوية">
+            <input type="text" id="nomzawia" placeholder="الفاكس"> 
+            </div>
+
+            <div class="zaouia_statiistique">
+            <input type="text" id="nomzawia" placeholder="عدد مؤطري الزاوية الموظفين"> 
+            <input type="text" id="nomzawia" placeholder="عدد مؤطري الزاوية الغير موظفين"> 
+            <input type="text" id="nomzawia" placeholder="عدد الطلبة  الداخليين"> 
+            <input type="text" id="nomzawia" placeholder="عدد الطلبة  الخارجيين"> 
+            <input type="text" id="nomzawia" placeholder="عدد الطلبة الخارجيين ذكور">
+            <input type="text" id="nomzawia" placeholder="عدد الطلبة الخارجيين إناث">
+            <input type="text" id="nomzawia" placeholder="عدد الطلبة الأجانب">
+            <input type="text" id="nomzawia" placeholder="دول الطلبة الأجانب">  
+            </div>
+
+
             <div class="SelectWilaya">
                 <label for="wilaya">الولاية:</label>
                 <select name="wilaya" id="wilaya">
