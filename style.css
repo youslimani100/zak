@@ -37,7 +37,7 @@ body{
 }
 
 input[type=text], select {
-    width: 100%;
+    width: auto;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -72,7 +72,7 @@ input:focus{
     width: 28.5%;
 }
 select{
-    width: auto;
+    width: 100%;
     height: 30px;
     outline: none;
     border: none;
