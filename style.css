@@ -35,9 +35,24 @@ body{
 .zaouia_statiistique{
     background: #d2f38c;
 }
-input{
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    direction: rtl;
+  }
+  
+
+
+
+/*input{
     /* float: right;
-    width: auto; */
+    width: auto; 
     width: 80%;
     height: 30px;
     outline: none;
@@ -51,13 +66,13 @@ input:focus{
     background: #b5cee8;
     transform: scale(1.05);
 }
-
+*/
 /* Select css .................................... */
 .SelectWilaya select{
     width: 28.5%;
 }
 select{
-    width: 100%;
+    width: auto;
     height: 30px;
     outline: none;
     border: none;
