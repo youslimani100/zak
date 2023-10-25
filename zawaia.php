@@ -15,6 +15,7 @@
 
         <!-- tester si l'utilisateur est connecté -->
         <?php
+        require('algeria_cities.php');
         session_start();
         if(isset($_GET['deconnexion']))
         { 
@@ -91,7 +92,7 @@
         </div>
 
 
-        <div class="SelectWilaya">
+        <!-- <div class="SelectWilaya">
             <label for="wilaya">الولاية:</label>
             <select name="wilaya" id="wilaya">
                 <option value="">--الولاية--</option>
@@ -108,7 +109,7 @@
                 <option value="oran">وهران</option>
                 <option value="laghouat">الأغواط</option>
                 <option value="adrar">أدرار</option>
-            </select>
+            </select> -->
 
             <label for="commune">البلدية:</label>
             <select name="wilaya" id="wilaya">
