@@ -17,8 +17,10 @@
         <?php
         require('algeria_cities.php');
         session_start();
-        if (isset($_GET['deconnexion'])) {
-            if ($_GET['deconnexion'] == true) {
+        if(isset($_GET['deconnexion']))
+        {
+            if($_GET['deconnexion']==true)
+        {
                 session_unset();
                 header("location:login.php");
             }
@@ -77,14 +79,24 @@
 
 
 
+
+
+
+
+
+
         <form id="form" enctype="multipart/form-data" action="" onsubmit="" method="post">
             <div class="inputs">
                 <div class="zaouia_inf">
                     <input type="text" id="nom_zaouia" name="nom_zaouia" type="text" placeholder="اسم الزاوية">
-                    <input type="text" id="natariqua_zaouiame" name="tariqua_zaouia" type="text" placeholder="الطريقة الصوفية">
+                    <input type="text" id="natariqua_zaouiame" name="tariqua_zaouia" type="text"
+                        placeholder="الطريقة الصوفية">
                     <input type="text" id="natype_activiteme" name="type_activite" type="text" placeholder="نوع النشاط">
-                    <input type="text" id="fondateur_zaouia" name="fondateur_zaouia" type="text" placeholder="اسم مؤسس الزاوية">
-                    <input type="date" id="annee_m_zaouia" name="annee_m_zaouia" type="text" placeholder="سنة التأسيس ميلادي"> <!--     <input type="text" placeholder="سنة التأسيس هجري">
+                    <input type="text" id="fondateur_zaouia" name="fondateur_zaouia" type="text"
+                        placeholder="اسم مؤسس الزاوية">
+                    <input type="date" id="annee_m_zaouia" name="annee_m_zaouia" type="text"
+                        placeholder="سنة التأسيس ميلادي">
+                    <!--     <input type="text" placeholder="سنة التأسيس هجري">
                 <input type="text" placeholder="عاملة">
                 <input type="text" placeholder="البلدية (مقر الزاوية)">
                 <input type="text" placeholder="عنوان الزاوية">
@@ -155,7 +167,47 @@
 
     </div>
 
-    <div class="outputs">
+
+
+
+    <?php
+    $connexion = mysqli_connect("localhost", "root", "", "bdd_login") or die("Erreur de connexion: " . mysqli_error($connexion));
+    $htmlresult = '';    
+  if($list_zaouia = mysqli_query($connexion,"SELECT  `nom_zaouia`, `tariqua_sofia`, `fondateur_zaouia`, `annee_etablissement_mil` FROM `zaouia` WHERE 1"))
+  {
+    $htmlresult .= '
+                <table>
+                <tr>
+                <th>إسم الزاوية</th>
+                <th>الطريقة</th>
+                <th>عاملة</th>
+                <th>مِؤسس الزاوية</th>
+                <th>سنة التأسيس م</th>
+            </tr>
+                 ';
+    echo $htmlresult;
+  while ($ligne_zaouia = $list_zaouia->fetch_assoc())
+  {
+    $htmlresult .= '<tr><td>'.$ligne_zaouia["nom_zaouia"].'</td>.<td>'.$ligne_zaouia["tariqua_sofia"].'</td>.<td>'.$ligne_zaouia["fondateur_zaouia"].'</td>.<td>'.$ligne_zaouia["annee_etablissement_mil"].'</td>';
+    $htmlresult .='<td><button id="update">تحيين</button></td>
+                    <td><button id="delete">حذف</button></td></tr>';
+}
+  echo $htmlresult;
+}
+
+  
+
+?>
+
+
+
+
+
+
+
+
+
+   <!--  <div class="outputs">
         <table>
             <tr>
                 <th>إسم الزاوية</th>
@@ -193,7 +245,7 @@
                 </tr>
             </tbody>
         </table>
-    </div>
+    </div> -->
     </div>
 </body>
 <?php

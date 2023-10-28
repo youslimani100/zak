@@ -14,14 +14,14 @@ if(isset($_POST['username']) && isset($_POST['password']))
 
  // on applique les deux fonctions mysqli_real_escape_string et htmlspecialchars
  // pour éliminer toute attaque de type injection SQL et XSS
- $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['username'])); 
- $password = mysqli_real_escape_string($db,htmlspecialchars($_POST['password']));
+ $username = mysqli_real_escape_string($connexion,htmlspecialchars($_POST['username'])); 
+ $password = mysqli_real_escape_string($connexion,htmlspecialchars($_POST['password']));
  
  if($username !== "" && $password !== "")
  {
  $requete = "SELECT count(*) FROM utilisateur where 
  nom_utilisateur = '".$username."' and mot_de_passe = '".$password."' ";
- $exec_requete = mysqli_query($db,$requete);
+ $exec_requete = mysqli_query($connexion,$requete);
  $reponse = mysqli_fetch_array($exec_requete);
  $count = $reponse['count(*)'];
  if($count!=0) // nom d'utilisateur et mot de passe correctes
