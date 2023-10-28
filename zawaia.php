@@ -50,6 +50,7 @@
             <p>قائمة الزوايا</p>
 
         </div>
+        <form id="form" enctype="multipart/form-data" onsubmit="return validate()" method="post">
         <div class="inputs">
             <div class="zaouia_inf">
                 <input type="text" placeholder="اسم الزاوية">
@@ -121,9 +122,11 @@
             </select>
 
         </div>
+        </form>
         <button>أنشئ</button>
 
     </div>
+
     <div class="outputs">
         <table>
             <tr>
@@ -165,5 +168,12 @@
     </div>
     </div>
 </body>
+<?php    
 
+ function insert_zaouia()
+    {
+        
+
+    }
+    ?>
 </html>
