@@ -17,29 +17,26 @@
         <?php
         require('algeria_cities.php');
         session_start();
-        if(isset($_GET['deconnexion']))
-        { 
-        if($_GET['deconnexion']==true)
-        { 
-        session_unset();
-        header("location:login.php");
-        }
+        if (isset($_GET['deconnexion'])) {
+            if ($_GET['deconnexion'] == true) {
+                session_unset();
+                header("location:login.php");
+            }
         }
         /* else if($_SESSION['username'] !== ""){
         $user = $_SESSION['username'];
         // afficher un message
         echo "<br>Bonjour $user, vous êtes connectés";
         } */
-       
-       
-        if(isset($_SESSION['username'])) 
-        { 
+
+
+        if (isset($_SESSION['username'])) {
             $user = $_SESSION['username'];
-            echo "<br>المديرية الولائية : $user";}
-        else { 
-           header("location:login.php");
-       }
-       
+            echo "<br>المديرية الولائية : $user";
+        } else {
+            header("location:login.php");
+        }
+
         ?>
 
     </div>
@@ -50,16 +47,45 @@
             <p>قائمة الزوايا</p>
 
         </div>
-        <form id="form" enctype="multipart/form-data" onsubmit="return validate()" method="post">
-        <div class="inputs">
-            <div class="zaouia_inf">
-                <input type="text" placeholder="اسم الزاوية">
-                <input type="text" placeholder="الطريقة الصوفية">
+
+
+        <?php
+        // require('config.php');
+
+        if (!empty($_POST["creer_zaouia"])) {
+            $nom_zaouia = $_POST["nom_zaouia"];
+            $tariqua_zaouia = $_POST["tariqua_zaouia"];
+            $type_activite = $_POST["type_activite"];
+            $fondateur_zaouia = $_POST["fondateur_zaouia"];
+            $annee_m_zaouia = $_POST["annee_m_zaouia"];
+
+            //$connexion = mysqli_connect("localhost", "root", "", "contact_form") or die("Erreur de connexion: " . mysqli_error($connexion));
+
+            $connexion = mysqli_connect("localhost", "root", "", "bdd_login") or die("Erreur de connexion: " . mysqli_error($connexion));
+            $result = mysqli_query($connexion, "INSERT INTO  zaouia  (nom_zaouia , tariqua_sofia, type_activite, fondateur_zaouia,annee_etablissement_mil) VALUES ('" . $nom_zaouia . "', '" . $tariqua_zaouia . "','" . $type_activite . "','" . $fondateur_zaouia . "','" . $annee_m_zaouia . "')");
+            if ($result) {
+                $db_msg = "Vos informations de contact sont enregistrées avec succés.";
+                $type_db_msg = "success";
+            } else {
+                $db_msg = "Erreur lors de la tentative d'enregistrement de contact.";
+                $type_db_msg = "error";
+            }
+        }
+        ?>
+
+
+
+
+
+        <form id="form" enctype="multipart/form-data" action="" onsubmit="" method="post">
+            <div class="inputs">
+                <div class="zaouia_inf">
+                    <input type="text" id="nom_zaouia" name="nom_zaouia" type="text" placeholder="اسم الزاوية">
+                    <input type="text" id="natariqua_zaouiame" name="tariqua_zaouia" type="text" placeholder="الطريقة الصوفية">
+                    <input type="text" id="natype_activiteme" name="type_activite" type="text" placeholder="نوع النشاط">
+                    <input type="text" id="fondateur_zaouia" name="fondateur_zaouia" type="text" placeholder="اسم مؤسس الزاوية">
+                    <input type="date" id="annee_m_zaouia" name="annee_m_zaouia" type="text" placeholder="سنة التأسيس ميلادي"> <!--     <input type="text" placeholder="سنة التأسيس هجري">
                 <input type="text" placeholder="عاملة">
-                <input type="text" placeholder="نوع النشاط">
-                <input type="text" placeholder="اسم مؤسس الزاوية">
-                <input type="text" placeholder="سنة التأسيس هجري">
-                <input type="text" placeholder="سنة التأسيس ميلادي">
                 <input type="text" placeholder="البلدية (مقر الزاوية)">
                 <input type="text" placeholder="عنوان الزاوية">
                 <input type="text" placeholder="الهاتف الثابت">
@@ -70,8 +96,8 @@
                 <input type="text" placeholder="صورة أمامية للزاوية">
                 <input type="text" placeholder="الربط بشبكة الانترنيت">
                 <input type="text" placeholder="منصات الزاوية على الأنترنيت">
-                <!-- <input type="text" id="adressezawia" placeholder="عنوان الزاوية">
-             <input type="tel" id="telezawia" placeholder="رقم الهاتف"> -->
+                 <input type="text" id="adressezawia" placeholder="عنوان الزاوية">
+             <input type="tel" id="telezawia" placeholder="رقم الهاتف"> 
             </div>
         </div>
 
@@ -91,9 +117,9 @@
             <input type="text" placeholder="عدد الطلبة الأجانب">
             <input type="text" placeholder="دول الطلبة الأجانب">
         </div>
+ -->
 
-
-        <!-- <div class="SelectWilaya">
+                    <!-- <div class="SelectWilaya">
             <label for="wilaya">الولاية:</label>
             <select name="wilaya" id="wilaya">
                 <option value="">--الولاية--</option>
@@ -110,7 +136,7 @@
                 <option value="oran">وهران</option>
                 <option value="laghouat">الأغواط</option>
                 <option value="adrar">أدرار</option>
-            </select> -->
+            </select> 
 
             <label for="commune">البلدية:</label>
             <select name="wilaya" id="wilaya">
@@ -120,10 +146,12 @@
                 <option value="laghouat">الأغواط</option>
                 <option value="adrar">أدرار</option>
             </select>
+                -->
+                    <input type="submit" name="creer_zaouia" value="أنشئ" />
 
-        </div>
+                </div>
+
         </form>
-        <button>أنشئ</button>
 
     </div>
 
@@ -168,12 +196,11 @@
     </div>
     </div>
 </body>
-<?php    
+<?php
 
- function insert_zaouia()
-    {
-        
+function insert_zaouia()
+{
+}
+?>
 
-    }
-    ?>
 </html>
