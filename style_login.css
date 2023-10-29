@@ -1,51 +1,57 @@
-body{
+body {
     /* background: #67BE4B; */
     background: #ccc;
-   }
-   .barre_header{
+}
+
+.barre_header {
     background: #5e815c;
-    width:100%;
+    width: 100%;
     height: 60px;
-    margin:0 20px;
+    margin: 0 20px;
     padding: 0 10px;
     /* margin-top:10%; */
-text-align: center;
- }
- .barre_header h1{
+    text-align: center;
+}
+
+.barre_header h1 {
     color: #ffffff;
- }
-   #container{
-    width:400px;
-    margin:0 auto;
-    margin-top:10%;
+}
+
+#container {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 10%;
     direction: rtl;
 }
-   /* Bordered form */
-   form {
-    width:100%;
+
+/* Bordered form */
+form {
+    width: 100%;
     padding: 30px;
     border: 1px solid #f1f1f1;
     background: #fff;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-   }
-   #container h1{
+}
+
+#container h1 {
     width: 60%;
     margin: 0 auto;
     padding-bottom: 10px;
-   }
-   
-   /* Full-width inputs */
-   input[type=text], input[type=password] {
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     /* display: inline-block; */
-direction: rtl;    border: 1px solid #ccc;
+    direction: rtl;
+    border: 1px solid #ccc;
     box-sizing: border-box;
-   }
-  
-   /* Set a style for all buttons */
-   input[type=submit] {
+}
+
+/* Set a style for all buttons */
+input[type=submit] {
     /* background-color: #53af57; */
     font-size: x-large;
     background-color: #5e815c;
@@ -55,9 +61,10 @@ direction: rtl;    border: 1px solid #ccc;
     border: none;
     cursor: pointer;
     width: 100%;
-   }
-   input[type=submit]:hover {
+}
+
+input[type=submit]:hover {
     background-color: white;
     color: #53af57;
     border: 1px solid #53af57;
-   }
+}

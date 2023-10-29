@@ -8,6 +8,8 @@
 body {
     background: #fff;
     color: #000;
+    direction: rtl;
+
     /* font-family: 'Times New Roman', Times, serif; */
 }
 
@@ -31,7 +33,7 @@ body {
 /* input css .................................... */
 .zaouia_inf {
     /* display: inline;*/
-    background: #adeaaa;
+    background: #d7f0d6;
     /* border: 1px solid #8b4d4d; */
     display: flex;
     flex-wrap: wrap;
@@ -50,7 +52,7 @@ body {
 input[type=text] {
     /* float: right; */
 
-    float: right;
+    /* float: right; */
     width: 70%;
     padding: 12px 20px;
     margin: 8px 4px;
@@ -62,8 +64,26 @@ input[type=text] {
 
 }
 
-.inputs {
-    background: #60cc79;
+input[type=date] {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 4px;
+    /* display:inline; */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    direction: rtl;
+}
+
+input[type=submit] {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 4px;
+    /* display:inline; */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    direction: rtl;
 }
 
 
@@ -112,7 +132,7 @@ label {
 
 /* Button css .................................... */
 button {
-    width: 100%;
+    width: 75%;
     height: 30px;
     font-weight: bold;
     background: #5c646e;
@@ -127,7 +147,7 @@ button:hover {
 }
 
 
-table{
+table {
     width: 100%;
     direction: rtl;
 

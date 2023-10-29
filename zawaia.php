@@ -94,6 +94,7 @@
                     <input type="text" id="natype_activiteme" name="type_activite" type="text" placeholder="نوع النشاط">
                     <input type="text" id="fondateur_zaouia" name="fondateur_zaouia" type="text"
                         placeholder="اسم مؤسس الزاوية">
+                        <br>
                     <input type="date" id="annee_m_zaouia" name="annee_m_zaouia" type="text"
                         placeholder="سنة التأسيس ميلادي">
                     <!--     <input type="text" placeholder="سنة التأسيس هجري">
