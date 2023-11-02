@@ -17,10 +17,8 @@
         <?php
         require('algeria_cities.php');
         session_start();
-        if(isset($_GET['deconnexion']))
-        {
-            if($_GET['deconnexion']==true)
-        {
+        if (isset($_GET['deconnexion'])) {
+            if ($_GET['deconnexion'] == true) {
                 session_unset();
                 header("location:login.php");
             }
@@ -53,27 +51,31 @@
 
         <?php
         // require('config.php');
+         if (isset($_POST["creer_zaouia"])) {
+                $nom_zaouia = $_POST["nom_zaouia"];
+                $tariqua_zaouia = $_POST["tariqua_zaouia"];
 
-        if (!empty($_POST["creer_zaouia"])) {
-            $nom_zaouia = $_POST["nom_zaouia"];
-            $tariqua_zaouia = $_POST["tariqua_zaouia"];
-            $type_activite = $_POST["type_activite"];
-            $fondateur_zaouia = $_POST["fondateur_zaouia"];
-            $annee_m_zaouia = $_POST["annee_m_zaouia"];
-
-            //$connexion = mysqli_connect("localhost", "root", "", "contact_form") or die("Erreur de connexion: " . mysqli_error($connexion));
-
-            $connexion = mysqli_connect("localhost", "root", "", "bdd_login") or die("Erreur de connexion: " . mysqli_error($connexion));
-            $result = mysqli_query($connexion, "INSERT INTO  zaouia  (nom_zaouia , tariqua_sofia, type_activite, fondateur_zaouia,annee_etablissement_mil) VALUES ('" . $nom_zaouia . "', '" . $tariqua_zaouia . "','" . $type_activite . "','" . $fondateur_zaouia . "','" . $annee_m_zaouia . "')");
-            if ($result) {
-                $db_msg = "Vos informations de contact sont enregistrées avec succés.";
-                $type_db_msg = "success";
-            } else {
-                $db_msg = "Erreur lors de la tentative d'enregistrement de contact.";
-                $type_db_msg = "error";
-            }
-        }
-        ?>
+                $type_activite = $_POST["type_activite"];
+                $fondateur_zaouia = $_POST["fondateur_zaouia"];
+                $annee_m_zaouia = $_POST["annee_m_zaouia"];
+    
+                //$connexion = mysqli_connect("localhost", "root", "", "contact_form") or die("Erreur de connexion: " . mysqli_error($connexion));
+    
+                $connexion = mysqli_connect("localhost", "root", "", "bdd_login") or die("Erreur de connexion: " . mysqli_error($connexion));
+                $result = mysqli_query($connexion, "INSERT INTO  zaouia  (nom_zaouia , tariqua_sofia, type_activite, fondateur_zaouia,annee_etablissement_mil) VALUES ('" . $nom_zaouia . "', '" . $tariqua_zaouia . "','" . $type_activite . "','" . $fondateur_zaouia . "','" . $annee_m_zaouia . "')");
+                if ($result) {
+                    $db_msg = "Vos informations de contact sont enregistrées avec succés.";
+                    $type_db_msg = "success";
+                } else {
+                    $db_msg = "Erreur lors de la tentative d'enregistrement de contact.";
+                    $type_db_msg = "error";
+                }
+                echo '<div style="background-color: #62d760;width: 50%;">'.$db_msg.'</div><br>';
+             }
+    
+        
+        
+                ?>
 
 
 
@@ -86,17 +88,14 @@
 
 
         <form id="form" enctype="multipart/form-data" action="" onsubmit="" method="post">
-            <div class="inputs">
+            <div  class="inputs">
                 <div class="zaouia_inf">
                     <input type="text" id="nom_zaouia" name="nom_zaouia" type="text" placeholder="اسم الزاوية">
-                    <input type="text" id="natariqua_zaouiame" name="tariqua_zaouia" type="text"
-                        placeholder="الطريقة الصوفية">
+                    <input type="text" id="natariqua_zaouiame" name="tariqua_zaouia" type="text" placeholder="الطريقة الصوفية">
                     <input type="text" id="natype_activiteme" name="type_activite" type="text" placeholder="نوع النشاط">
-                    <input type="text" id="fondateur_zaouia" name="fondateur_zaouia" type="text"
-                        placeholder="اسم مؤسس الزاوية">
-                        <br>
-                    <input type="date" id="annee_m_zaouia" name="annee_m_zaouia" type="text"
-                        placeholder="سنة التأسيس ميلادي">
+                    <input type="text" id="fondateur_zaouia" name="fondateur_zaouia" type="text" placeholder="اسم مؤسس الزاوية">
+                    <br>
+                    <input type="date" id="annee_m_zaouia" name="annee_m_zaouia" type="text" placeholder="سنة التأسيس ميلادي">
                     <!--     <input type="text" placeholder="سنة التأسيس هجري">
                 <input type="text" placeholder="عاملة">
                 <input type="text" placeholder="البلدية (مقر الزاوية)">
@@ -160,7 +159,7 @@
                 <option value="adrar">أدرار</option>
             </select>
                 -->
-                    <input type="submit" name="creer_zaouia" value="أنشئ" />
+                    <input type="submit" name="creer_zaouia" onclick="display()" value="أنشئ" />
 
                 </div>
 
@@ -173,42 +172,43 @@
 
     <?php
     $connexion = mysqli_connect("localhost", "root", "", "bdd_login") or die("Erreur de connexion: " . mysqli_error($connexion));
-    $htmlresult = '';    
-  if($list_zaouia = mysqli_query($connexion,"SELECT  `nom_zaouia`, `tariqua_sofia`, `fondateur_zaouia`, `annee_etablissement_mil` FROM `zaouia` WHERE 1"))
-  {
-    $htmlresult .= '
+    $htmlresult = '';
+    if ($list_zaouia = mysqli_query($connexion, "SELECT  `nom_zaouia`, `tariqua_sofia`, `fondateur_zaouia`, `annee_etablissement_mil` FROM `zaouia` WHERE 1")) {
+        $htmlresult .= '
                 <table>
                 <tr>
                 <th>إسم الزاوية</th>
                 <th>الطريقة</th>
-                <th>عاملة</th>
                 <th>مِؤسس الزاوية</th>
                 <th>سنة التأسيس م</th>
+                <th>تحيين</th>
+                <th>حذف</th>
             </tr>
+            <tbody>
                  ';
-    echo $htmlresult;
-  while ($ligne_zaouia = $list_zaouia->fetch_assoc())
-  {
-    $htmlresult .= '<tr><td>'.$ligne_zaouia["nom_zaouia"].'</td>.<td>'.$ligne_zaouia["tariqua_sofia"].'</td>.<td>'.$ligne_zaouia["fondateur_zaouia"].'</td>.<td>'.$ligne_zaouia["annee_etablissement_mil"].'</td>';
-    $htmlresult .='<td><button id="update">تحيين</button></td>
+
+        while ($ligne_zaouia = $list_zaouia->fetch_assoc()) {
+            $htmlresult .= '<tr><td>' . $ligne_zaouia["nom_zaouia"] . '</td>.<td>' . $ligne_zaouia["tariqua_sofia"] . '</td>.<td>' . $ligne_zaouia["fondateur_zaouia"] . '</td>.<td>' . $ligne_zaouia["annee_etablissement_mil"] . '</td>';
+            $htmlresult .= '<td><button id="update">تحيين</button></td>
                     <td><button id="delete">حذف</button></td></tr>';
-}
-  echo $htmlresult;
-}
-
-  
-
-?>
+        }
+        $htmlresult .= '<tbody>';
+        echo $htmlresult;
+    }
 
 
 
+    ?>
 
 
 
 
 
 
-   <!--  <div class="outputs">
+
+
+
+    <!--  <div class="outputs">
         <table>
             <tr>
                 <th>إسم الزاوية</th>
